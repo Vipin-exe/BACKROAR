@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackRoar — Mobile Cases & Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --brand-bg: #F5F5F5;          /* Overall page background */
+            --brand-navbar: #1A1A1A;      /* Navbar background */
+            --brand-footer: #1A1A1A;      /* Footer background */
+            --brand-heading: #88898A;     /* Headings (H1–H3) on light bg */
+            --brand-text: #1A1A1A;        /* Body text */
+            --brand-primary: #88898A;     /* Primary button */
+            --brand-primary-hover: #C4C4C4; /* Primary button hover */
+            --brand-accent: #0066FF;      /* Optional accent button */
+            --card-bg: #FFFFFF;           /* Card background (white) */
+            --card-bg-alt: #F5F5F5;       /* Card alt background (light) */
+            --card-border: #C4C4C4;       /* Card borders */
+            --brand-light: #F5F5F5;
+        }
+        body { font-family: 'Poppins', sans-serif; color: var(--brand-text); }
+        .gradient-bg { background: linear-gradient(135deg, var(--brand-navbar) 0%, #1a1a1a 100%); }
+        .text-gradient { background: linear-gradient(90deg, var(--brand-heading) 0%, var(--brand-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-scale { transition: transform 0.25s ease; }
+        .hover-scale:hover { transform: translateY(-2px) scale(1.02); }
+        .badge { display: inline-block; padding: 0.25rem 0.6rem; font-size: 0.75rem; border-radius: 999px; background: var(--brand-primary); color: #fff; }
+        .btn-primary { background: var(--brand-primary); color: #fff; }
+        .btn-primary:hover { background: var(--brand-primary-hover); }
+        .btn-accent { background: var(--brand-accent); color: #fff; }
+        .btn-accent:hover { background: #3388ff; }
+        .link-hover:hover { color: var(--brand-primary); }
+        .link-accent { color: var(--brand-primary); }
+        .link-accent:hover { color: var(--brand-primary-hover); }
+    </style>
+</head>
+
+<body class="bg-[var(--brand-bg)]">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2">
+                <img src="image.png" alt="BlackRoar" class="w-50 h-10 square" />
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#shop" class="text-[var(--brand-text)] link-hover">Shop</a>
+                <a href="#collections" class="text-[var(--brand-text)] link-hover">Collections</a>
+                <a href="#about" class="text-[var(--brand-text)] link-hover">About</a>
+                <a href="#contact" class="text-[var(--brand-text)] link-hover">Contact</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <input type="search" placeholder="Search cases" class="hidden md:block px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
+                <a href="#" aria-label="Cart" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+                    <span>Cart</span>
+                </a>
+                <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-[var(--brand-text)] hover:bg-black/5">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <button aria-label="Cart" class="md:hidden p-2 rounded-lg bg-[var(--brand-navbar)] text-white hover:bg-black">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+                </button>
+                <a href="login.html" class="hidden md:inline-block px-3 py-2 rounded-lg btn-accent text-white text-sm">Login</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+            <div class="px-4 py-3 space-y-3">
+                <input type="search" placeholder="Search cases" class="w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
+                <a href="#shop" class="block text-[var(--brand-text)]">Shop</a>
+                <a href="#collections" class="block text-[var(--brand-text)]">Collections</a>
+                <a href="#about" class="block text-[var(--brand-text)]">About</a>
+                <a href="#contact" class="block text-[var(--brand-text)]">Contact</a>
+                <a href="login.html" class="block text-[var(--brand-text)]">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-[70vh] md:min-h-screen flex items-center justify-center pt-20 md:pt-24 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Premium Mobile Cases for Every <span class="text-gradient">Style</span>
+            </h1>
+            <p class="text-gray-200 max-w-2xl mx-auto mt-4 md:mt-6">
+                Shockproof, MagSafe-ready, designer prints, and transparent cases for all major models.
+            </p>
+            <div class="mt-6 md:mt-8 flex items-center justify-center gap-3">
+                <a href="#shop" class="btn-primary text-white font-medium px-5 py-3 rounded-lg">Shop Now</a>
+                <a href="#collections" class="bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-lg border border-white/20">View Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections / Categories -->
+    <section id="collections" class="py-14 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 text-[var(--brand-heading)]">Shop by Collection</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#shop" class="p-6 rounded-xl shadow hover-scale bg-[var(--card-bg-alt)] border border-[var(--card-border)]">
+                    <div class="h-36 bg-[url('https://images.unsplash.com/photo-1592878904946-b3cd7f3a7d1e?auto=format&fit=crop&w=800&q=60')] bg-cover bg-center rounded-lg"></div>
+                    <h3 class="mt-4 text-lg font-semibold text-[var(--brand-heading)]">Shockproof Armor</h3>
+                    <p class="text-gray-600 text-sm">Heavy-duty protection without bulk.</p>
+                </a>
+                <a href="#shop" class="p-6 rounded-xl shadow hover-scale bg-[var(--card-bg-alt)] border border-[var(--card-border)]">
+                    <div class="h-36 bg-[url('https://images.unsplash.com/photo-1530521954074-e64f6810b32c?auto=format&fit=crop&w=800&q=60')] bg-cover bg-center rounded-lg"></div>
+                    <h3 class="mt-4 text-lg font-semibold text-[var(--brand-heading)]">Designer Prints</h3>
+                    <p class="text-gray-600 text-sm">Curated artwork and premium textures.</p>
+                </a>
+                <a href="#shop" class="p-6 rounded-xl shadow hover-scale bg-[var(--card-bg-alt)] border border-[var(--card-border)]">
+                    <div class="h-36 bg-[url('https://images.unsplash.com/photo-1526506118085-60a07b7b7aa2?auto=format&fit=crop&w=800&q=60')] bg-cover bg-center rounded-lg"></div>
+                    <h3 class="mt-4 text-lg font-semibold text-[var(--brand-heading)]">Transparent & Clear</h3>
+                    <p class="text-gray-600 text-sm">Crystal clarity with scratch resistance.</p>
+                </a>
+                <a href="#shop" class="p-6 rounded-xl shadow hover-scale bg-[var(--card-bg-alt)] border border-[var(--card-border)]">
+                    <div class="h-36 bg-[url('https://images.unsplash.com/photo-1590845947670-c009801ffa74?auto=format&fit=crop&w=800&q=60')] bg-cover bg-center rounded-lg"></div>
+                    <h3 class="mt-4 text-lg font-semibold text-[var(--brand-heading)]">MagSafe Series</h3>
+                    <p class="text-gray-600 text-sm">Magnetic alignment for chargers and mounts.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="shop" class="py-14 bg-[var(--brand-light)]">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl md:text-4xl font-bold text-[var(--brand-heading)]">Featured Cases</h2>
+                <a href="#" class="link-accent font-medium">View all</a>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card -->
+                <div class="bg-[var(--card-bg)] rounded-xl shadow hover-scale overflow-hidden border border-[var(--card-border)]">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542326237-94b1c5a1a1c1?auto=format&fit=crop&w=800&q=60" alt="iPhone 14 Shockproof Case" class="w-full h-44 object-cover" />
+                        <span class="absolute top-3 left-3 badge">Bestseller</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">iPhone 14 Shockproof Case</h3>
+                        <p class="text-sm text-gray-600">Matte black, anti-slip grip</p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-lg font-bold">₹699</span>
+                            <a href="#" class="px-3 py-2 rounded-lg btn-primary text-white text-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="bg-[var(--card-bg)] rounded-xl shadow hover-scale overflow-hidden border border-[var(--card-border)]">
+                    <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896e1?auto=format&fit=crop&w=800&q=60" alt="Samsung S23 Designer Case" class="w-full h-44 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold">Samsung S23 Designer Case</h3>
+                        <p class="text-sm text-gray-600">Marble finish, soft TPU</p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-lg font-bold">₹749</span>
+                            <a href="#" class="px-3 py-2 rounded-lg btn-primary text-white text-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="bg-[var(--card-bg)] rounded-xl shadow hover-scale overflow-hidden border border-[var(--card-border)]">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=60" alt="OnePlus Clear Case" class="w-full h-44 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold">OnePlus Clear Case</h3>
+                        <p class="text-sm text-gray-600">Scratch-resistant, anti-yellowing</p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-lg font-bold">₹599</span>
+                            <a href="#" class="px-3 py-2 rounded-lg btn-primary text-white text-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="bg-[var(--card-bg)] rounded-xl shadow hover-scale overflow-hidden border border-[var(--card-border)]">
+                    <img src="https://images.unsplash.com/photo-1520975619013-725fc2032e58?auto=format&fit=crop&w=800&q=60" alt="MagSafe Leather Case" class="w-full h-44 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold">MagSafe Leather Case</h3>
+                        <p class="text-sm text-gray-600">Premium leather, strong magnets</p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-lg font-bold">₹1,299</span>
+                            <a href="#" class="px-3 py-2 rounded-lg btn-primary text-white text-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-14 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-xl bg-[var(--card-bg-alt)] shadow hover-scale border border-[var(--card-border)]">
+                    <h4 class="font-semibold">Free Shipping</h4>
+                    <p class="text-sm text-gray-600 mt-1">On orders over ₹999</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[var(--card-bg-alt)] shadow hover-scale border border-[var(--card-border)]">
+                    <h4 class="font-semibold">7-Day Return</h4>
+                    <p class="text-sm text-gray-600 mt-1">Hassle-free exchanges</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[var(--card-bg-alt)] shadow hover-scale border border-[var(--card-border)]">
+                    <h4 class="font-semibold">Secure Checkout</h4>
+                    <p class="text-sm text-gray-600 mt-1">Payments protected</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[var(--card-bg-alt)] shadow hover-scale border border-[var(--card-border)]">
+                    <h4 class="font-semibold">Top Quality</h4>
+                    <p class="text-sm text-gray-600 mt-1">Premium materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[var(--brand-footer)] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">BlackRoar</h4>
+                    <p class="text-gray-400">Premium cases and accessories for your devices.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="link-hover">Shipping & Returns</a></li>
+                        <li><a href="#" class="link-hover">Privacy Policy</a></li>
+                        <li><a href="#" class="link-hover">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>support@casekaaran.com</li>
+                        <li>+91 90000 00000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-sm">© <span id="year"></span> BlackRoar. All rights reserved.</div>
+        </div>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
+    </script>
+
+</body>
+
+</html>

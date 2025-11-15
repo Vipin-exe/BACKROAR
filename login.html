@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — BlackRoar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --brand-bg: #F5F5F5;
+            --brand-navbar: #1A1A1A;
+            --brand-footer: #1A1A1A;
+            --brand-heading: #88898A;
+            --brand-text: #1A1A1A;
+            --brand-primary: #88898A;
+            --brand-primary-hover: #C4C4C4;
+            --brand-accent: #0066FF;
+            --card-bg: #FFFFFF;
+            --card-bg-alt: #F5F5F5;
+            --card-border: #C4C4C4;
+            --brand-light: #F5F5F5;
+        }
+        body { font-family: 'Poppins', sans-serif; color: var(--brand-text); }
+        .gradient-bg { background: linear-gradient(135deg, var(--brand-navbar) 0%, #1a1a1a 100%); }
+        .text-gradient { background: linear-gradient(90deg, var(--brand-heading) 0%, var(--brand-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-scale { transition: transform 0.25s ease; }
+        .hover-scale:hover { transform: translateY(-2px) scale(1.02); }
+        .badge { display: inline-block; padding: 0.25rem 0.6rem; font-size: 0.75rem; border-radius: 999px; background: var(--brand-primary); color: #fff; }
+        .btn-primary { background: var(--brand-primary); color: #fff; }
+        .btn-primary:hover { background: var(--brand-primary-hover); }
+        .btn-accent { background: var(--brand-accent); color: #fff; }
+        .btn-accent:hover { background: #3388ff; }
+        .link-hover:hover { color: var(--brand-primary); }
+        .link-accent { color: var(--brand-primary); }
+        .link-accent:hover { color: var(--brand-primary-hover); }
+    </style>
+</head>
+<body class="bg-[var(--brand-bg)]">
+    <nav class="fixed w-full z-50 bg-[var(--brand-navbar)]/95 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html#home" class="flex items-center gap-2">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#FFFFFF"/>
+                    <text x="12" y="16" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">B</text>
+                </svg>
+                <span class="text-xl font-semibold text-white">BACKROAR</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="index.html#shop" class="text-white link-hover">Shop</a>
+                <a href="index.html#collections" class="text-white link-hover">Collections</a>
+                <a href="index.html#about" class="text-white link-hover">About</a>
+                <a href="index.html#contact" class="text-white link-hover">Contact</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+            <div class="px-4 py-3 space-y-3">
+                <a href="index.html#shop" class="block text-white">Shop</a>
+                <a href="index.html#collections" class="block text-white">Collections</a>
+                <a href="index.html#about" class="block text-white">About</a>
+                <a href="index.html#contact" class="block text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen flex items-center justify-center pt-24 px-4">
+        <div class="w-full max-w-sm bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl shadow p-6">
+            <h1 class="text-2xl font-semibold text-[var(--brand-heading)] text-center">Login</h1>
+            <p class="text-sm text-gray-600 text-center mt-1">Welcome back to BlackRoar</p>
+            <form class="mt-6 space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium">Email</label>
+                    <input id="email" type="email" required class="mt-1 w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" placeholder="you@example.com" />
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium">Password</label>
+                    <input id="password" type="password" required class="mt-1 w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" placeholder="••••••••" />
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="inline-flex items-center gap-2 text-sm">
+                        <input type="checkbox" class="rounded border-[var(--card-border)]" />
+                        Remember me
+                    </label>
+                    <a href="#" class="text-sm link-accent">Forgot password?</a>
+                </div>
+                <button type="submit" class="w-full btn-primary px-4 py-2 rounded-lg font-medium">Sign In</button>
+            </form>
+            <div class="text-center mt-4 text-sm">
+                <span class="text-gray-600">New to BlackRoar?</span>
+                <a href="#" class="ml-1 link-accent font-medium">Create an account</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
+    </script>
+</body>
+</html>
