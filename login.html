@@ -34,43 +34,45 @@
         .link-hover:hover { color: var(--brand-primary); }
         .link-accent { color: var(--brand-primary); }
         .link-accent:hover { color: var(--brand-primary-hover); }
+        .bubble { position: absolute; border-radius: 9999px; background: var(--brand-primary); opacity: 0.15; animation: floatUp linear infinite; will-change: transform; }
+        .particle { position: absolute; border-radius: 9999px; background: var(--brand-accent); opacity: 0.12; animation: drift linear infinite; will-change: transform; }
+        @keyframes floatUp { 0% { transform: translateY(0) } 100% { transform: translateY(-120vh) } }
+        @keyframes drift { 0% { transform: translateY(0) translateX(0) } 100% { transform: translateY(-100vh) translateX(40px) } }
     </style>
 </head>
-<body class="bg-[var(--brand-bg)]">
-    <nav class="fixed w-full z-50 bg-[var(--brand-navbar)]/95 backdrop-blur-sm shadow-sm">
+<body class="bg-black">
+    <nav class="fixed w-full z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <a href="index.html#home" class="flex items-center gap-2">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" fill="#FFFFFF"/>
-                    <text x="12" y="16" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">B</text>
-                </svg>
-                <span class="text-xl font-semibold text-white">BACKROAR</span>
+                <img src="image.png" alt="BlackRoar" class="w-50 h-10 square" />
             </a>
             <div class="hidden md:flex items-center gap-6">
-                <a href="index.html#shop" class="text-white link-hover">Shop</a>
-                <a href="index.html#collections" class="text-white link-hover">Collections</a>
-                <a href="index.html#about" class="text-white link-hover">About</a>
-                <a href="index.html#contact" class="text-white link-hover">Contact</a>
+                <a href="index.html#shop" class="text-[var(--brand-text)] link-hover">Shop</a>
+                <a href="index.html#collections" class="text-[var(--brand-text)] link-hover">Collections</a>
+                <a href="index.html#about" class="text-[var(--brand-text)] link-hover">About</a>
+                <a href="index.html#contact" class="text-[var(--brand-text)] link-hover">Contact</a>
             </div>
             <div class="flex items-center gap-2">
-                <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10">
+                <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-[var(--brand-text)] hover:bg-black/5">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
-        <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+        <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
             <div class="px-4 py-3 space-y-3">
-                <a href="index.html#shop" class="block text-white">Shop</a>
-                <a href="index.html#collections" class="block text-white">Collections</a>
-                <a href="index.html#about" class="block text-white">About</a>
-                <a href="index.html#contact" class="block text-white">Contact</a>
+                <a href="index.html#shop" class="block text-[var(--brand-text)]">Shop</a>
+                <a href="index.html#collections" class="block text-[var(--brand-text)]">Collections</a>
+                <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
+                <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="min-h-screen flex items-center justify-center pt-24 px-4">
-        <div class="w-full max-w-sm bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl shadow p-6">
-            <h1 class="text-2xl font-semibold text-[var(--brand-heading)] text-center">Login</h1>
+    <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none"></canvas>
+    <main class="relative z-10 min-h-screen flex items-center justify-center pt-24 px-4">
+        <div class="w-full max-w-sm rounded-xl p-[1px] bg-gradient-to-r from-[var(--brand-heading)] to-[var(--brand-primary)] shadow">
+            <div class="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-[0.75rem] p-6">
+            <h1 class="text-2xl font-semibold text-gradient text-center">Login</h1>
             <p class="text-sm text-gray-600 text-center mt-1">Welcome back to BlackRoar</p>
             <form class="mt-6 space-y-4">
                 <div>
@@ -88,11 +90,12 @@
                     </label>
                     <a href="#" class="text-sm link-accent">Forgot password?</a>
                 </div>
-                <button type="submit" class="w-full btn-primary px-4 py-2 rounded-lg font-medium">Sign In</button>
+                <button type="submit" class="w-full btn-accent px-4 py-2 rounded-lg font-medium">Sign In</button>
             </form>
             <div class="text-center mt-4 text-sm">
                 <span class="text-gray-600">New to BlackRoar?</span>
                 <a href="#" class="ml-1 link-accent font-medium">Create an account</a>
+            </div>
             </div>
         </div>
     </main>
@@ -107,6 +110,63 @@
             mobileMenu.querySelectorAll('a').forEach(a => {
                 a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
+        }
+        const canvas = document.getElementById('bgCanvas');
+        if (canvas) {
+            const dpr = window.devicePixelRatio || 1;
+            const ctx = canvas.getContext('2d');
+            function resize() { canvas.width = window.innerWidth * dpr; canvas.height = window.innerHeight * dpr; }
+            resize();
+            window.addEventListener('resize', resize);
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const count = isMobile ? 60 : 120;
+            const styles = getComputedStyle(document.documentElement);
+            const primary = (styles.getPropertyValue('--brand-primary') || '#88898A').trim();
+            const accent = (styles.getPropertyValue('--brand-accent') || '#0066FF').trim();
+            const r = (min, max) => Math.random() * (max - min) + min;
+            const particles = new Array(count).fill(0).map(() => ({
+                x: r(0, canvas.width),
+                y: r(0, canvas.height),
+                vx: r(-0.35, 0.35) * dpr,
+                vy: r(-0.35, 0.35) * dpr,
+                size: r(1.2, 2.2) * dpr,
+                color: Math.random() < 0.6 ? accent : primary
+            }));
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = 0.85;
+                    ctx.fill();
+                }
+                const threshold = isMobile ? 100 * dpr : 140 * dpr;
+                ctx.globalAlpha = 0.09;
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 0.8 * dpr;
+                for (let i = 0; i < particles.length; i++) {
+                    const a = particles[i];
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const b = particles[j];
+                        const dx = a.x - b.x, dy = a.y - b.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist < threshold) {
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(b.x, b.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(draw);
+            }
+            requestAnimationFrame(draw);
         }
     </script>
 </body>
