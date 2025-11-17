@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart — BlackRoar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root { --brand-bg:#F5F5F5; --brand-navbar:#1A1A1A; --brand-footer:#1A1A1A; --brand-heading:#88898A; --brand-text:#1A1A1A; --brand-primary:#88898A; --brand-primary-hover:#C4C4C4; --brand-accent:#0066FF; --card-bg:#FFFFFF; --card-bg-alt:#F5F5F5; --card-border:#C4C4C4; --brand-light:#F5F5F5; }
+        body { font-family:'Poppins',sans-serif; color:var(--brand-text); }
+        .link-hover:hover { color: var(--brand-primary); }
+        .btn-primary { background: var(--brand-primary); color:#fff; }
+        .btn-primary:hover { background: var(--brand-primary-hover); }
+        .btn-accent { background: var(--brand-accent); color:#fff; }
+        .btn-accent:hover { background:#3388ff; }
+    </style>
+</head>
+<body class="bg-[var(--brand-bg)]">
+    <nav class="fixed w-full z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html#home" class="flex items-center gap-2">
+                <img src="image.png" alt="BlackRoar" class="w-50 h-10 square" />
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="index.html#shop" class="text-[var(--brand-text)] link-hover">Shop</a>
+                <a href="index.html#collections" class="text-[var(--brand-text)] link-hover">Collections</a>
+                <a href="index.html#about" class="text-[var(--brand-text)] link-hover">About</a>
+                <a href="index.html#contact" class="text-[var(--brand-text)] link-hover">Contact</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="cart.html" aria-label="Cart" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+                    <span>Cart</span>
+                </a>
+                <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-[var(--brand-text)] hover:bg-black/5">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <a href="login.html" class="hidden md:inline-block px-3 py-2 rounded-lg btn-accent text-white text-sm">Login</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+            <div class="px-4 py-3 space-y-3">
+                <a href="index.html#shop" class="block text-[var(--brand-text)]">Shop</a>
+                <a href="index.html#collections" class="block text-[var(--brand-text)]">Collections</a>
+                <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
+                <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
+                <a href="login.html" class="block text-[var(--brand-text)]">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl md:text-3xl font-semibold text-[var(--brand-heading)]">Your Cart</h1>
+            <div id="emptyState" class="mt-8 hidden">
+                <div class="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 text-center">
+                    <p class="text-gray-600">Your cart is empty.</p>
+                    <a href="index.html#shop" class="mt-4 inline-block px-4 py-2 rounded-lg btn-primary">Browse products</a>
+                </div>
+            </div>
+            <div id="cartContainer" class="mt-8 grid lg:grid-cols-3 gap-6 hidden">
+                <div class="lg:col-span-2 space-y-4" id="cartList"></div>
+                <aside class="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 h-fit">
+                    <h2 class="text-lg font-semibold text-[var(--brand-heading)]">Summary</h2>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span id="subtotal" class="font-semibold">₹0</span>
+                    </div>
+                    <div class="mt-2 flex items-center justify-between">
+                        <span class="text-gray-600">Shipping</span>
+                        <span class="text-gray-600">Calculated at checkout</span>
+                    </div>
+                    <hr class="my-4 border-[var(--card-border)]" />
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">Total</span>
+                        <span id="total" class="text-lg font-bold">₹0</span>
+                    </div>
+                    <button class="mt-6 w-full px-4 py-3 rounded-lg btn-accent font-medium">Checkout</button>
+                    <a href="index.html#shop" class="mt-3 w-full inline-block text-center px-4 py-3 rounded-lg border border-[var(--card-border)]">Continue Shopping</a>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuToggle && mobileMenu) { menuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); }); mobileMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => mobileMenu.classList.add('hidden')); }); }
+        function getCart(){ try { return JSON.parse(localStorage.getItem('cart')||'[]'); } catch(e){ return []; } }
+        function saveCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
+        function formatINR(n){ return '₹' + (n||0).toLocaleString('en-IN'); }
+        function render(){
+            const list = document.getElementById('cartList');
+            const cont = document.getElementById('cartContainer');
+            const empty = document.getElementById('emptyState');
+            const cart = getCart();
+            if (!cart.length){ cont.classList.add('hidden'); empty.classList.remove('hidden'); return; }
+            cont.classList.remove('hidden'); empty.classList.add('hidden');
+            list.innerHTML = '';
+            let sub = 0;
+            cart.forEach((item, idx) => {
+                const row = document.createElement('div');
+                row.className = 'bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-4 flex items-center gap-4';
+                row.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded" />
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold">${item.name}</h3>
+                                <p class="text-sm text-gray-600">${formatINR(item.price)}</p>
+                            </div>
+                            <button data-idx="${idx}" class="remove px-3 py-2 rounded-lg border border-[var(--card-border)]">Remove</button>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <div class="inline-flex items-center border border-[var(--card-border)] rounded-lg overflow-hidden">
+                                <button data-idx="${idx}" class="dec px-3 py-2">-</button>
+                                <span class="px-4">${item.qty}</span>
+                                <button data-idx="${idx}" class="inc px-3 py-2">+</button>
+                            </div>
+                            <span class="font-semibold">${formatINR(item.price * item.qty)}</span>
+                        </div>
+                    </div>`;
+                list.appendChild(row);
+                sub += item.price * item.qty;
+            });
+            document.getElementById('subtotal').textContent = formatINR(sub);
+            document.getElementById('total').textContent = formatINR(sub);
+            list.querySelectorAll('.remove').forEach(btn=>btn.addEventListener('click',()=>{ const i=+btn.dataset.idx; const c=getCart(); c.splice(i,1); saveCart(c); render(); }));
+            list.querySelectorAll('.inc').forEach(btn=>btn.addEventListener('click',()=>{ const i=+btn.dataset.idx; const c=getCart(); c[i].qty+=1; saveCart(c); render(); }));
+            list.querySelectorAll('.dec').forEach(btn=>btn.addEventListener('click',()=>{ const i=+btn.dataset.idx; const c=getCart(); c[i].qty=Math.max(1,c[i].qty-1); saveCart(c); render(); }));
+        }
+        render();
+    </script>
+</body>
+</html>
