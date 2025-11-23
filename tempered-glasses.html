@@ -3,26 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Backcases — BlackRoar</title>
+    <title>Tempered Glass — BlackRoar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
-        :root {
-            --brand-bg: #F5F5F5;
-            --brand-navbar: #1A1A1A;
-            --brand-footer: #1A1A1A;
-            --brand-heading: #88898A;
-            --brand-text: #1A1A1A;
-            --brand-primary: #88898A;
-            --brand-primary-hover: #C4C4C4;
-            --card-bg: #FFFFFF;
-            --card-bg-alt: #F5F5F5;
-            --card-border: #C4C4C4;
-        }
-        body { font-family: 'Poppins', sans-serif; color: var(--brand-text); }
-        .hover-scale { transition: transform 0.25s ease; }
+        :root { --brand-bg:#F5F5F5; --brand-navbar:#1A1A1A; --brand-footer:#1A1A1A; --brand-heading:#88898A; --brand-text:#1A1A1A; --brand-primary:#88898A; --brand-primary-hover:#C4C4C4; --card-bg:#FFFFFF; --card-border:#C4C4C4; }
+        body { font-family:'Poppins',sans-serif; color:var(--brand-text); }
+        .hover-scale { transition: transform .25s ease; }
         .hover-scale:hover { transform: translateY(-2px) scale(1.02); }
-        .badge { display: inline-block; padding: 0.25rem 0.6rem; font-size: 0.75rem; border-radius: 999px; background: var(--brand-primary); color: #fff; }
         .link-hover:hover { color: var(--brand-primary); }
     </style>
     <link rel="icon" href="image.png" />
@@ -41,11 +29,10 @@
             <div class="hidden md:flex items-center gap-6">
                 <a href="index.html#shop" class="text-[var(--brand-text)] link-hover">Shop</a>
                 <a href="categories.html" class="text-[var(--brand-text)] link-hover">Categories</a>
-                <a href="index.html#about" class="text-[var(--brand-text)] link-hover">About</a>
                 <a href="index.html#contact" class="text-[var(--brand-text)] link-hover">Contact</a>
             </div>
             <div class="flex items-center gap-2">
-                <input type="search" placeholder="Search cases" class="hidden md:block px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
+                <input type="search" placeholder="Search" class="hidden md:block px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
                 <a href="cart.html" aria-label="Cart" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
                     <span>Cart</span>
@@ -64,10 +51,9 @@
         </div>
         <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
             <div class="px-4 py-3 space-y-3">
-                <input type="search" placeholder="Search cases" class="w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
+                <input type="search" placeholder="Search" class="w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
                 <a href="index.html#shop" class="block text-[var(--brand-text)]">Shop</a>
                 <a href="categories.html" class="block text-[var(--brand-text)]">Categories</a>
-                <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
                 <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
             </div>
         </div>
@@ -75,74 +61,71 @@
 
     <section class="py-10">
         <div class="container mx-auto px-4">
-            <h1 class="text-2xl md:text-4xl font-bold text-center mb-8 text-[var(--brand-heading)] uppercase">Mobile Backcases</h1>
+            <h1 class="text-2xl md:text-4xl font-bold text-center mb-8 text-[var(--brand-heading)] uppercase">Tempered Glass</h1>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
                     <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <img src="CUSTOM CASE.png" alt="Custom Case" class="block w-full h-full object-cover" loading="lazy" decoding="async" sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" />
+                        <span class="text-lg md:text-xl font-semibold">Clear Temper</span>
                     </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Custom Case</div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Clear Temper</div>
                 </a>
                 <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
                     <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <img src="GLASS CASE.png" alt="Glass Case" class="block w-full h-full object-cover" loading="lazy" decoding="async" sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" />
+                        <span class="text-lg md:text-xl font-semibold">Mate Temper</span>
                     </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Glass Case</div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Mate Temper</div>
                 </a>
                 <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
                     <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <img src="SILICONE CASE.png" alt="Silicone Case" class="block w-full h-full object-cover" loading="lazy" decoding="async" sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" />
+                        <span class="text-lg md:text-xl font-semibold">UV Temper</span>
                     </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Silicone Case</div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">UV Temper</div>
                 </a>
                 <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
                     <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <img src="CLEAR CASE.png" alt="Clear Case" class="block w-full h-full object-cover" loading="lazy" decoding="async" sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" />
+                        <span class="text-lg md:text-xl font-semibold">Full Glue Temper</span>
                     </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Clear Case</div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Full Glue Temper</div>
                 </a>
                 <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
                     <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <img src="COUPLE CASE.png" alt="Couple Case" class="block w-full h-full object-cover" loading="lazy" decoding="async" sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" />
+                        <span class="text-lg md:text-xl font-semibold">Privacy Temper</span>
                     </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Couple Case</div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Privacy Temper</div>
                 </a>
                 <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
                     <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <img src="NAME CASE.png" alt="Name Case" class="block w-full h-full object-cover" loading="lazy" decoding="async" sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" />
+                        <span class="text-lg md:text-xl font-semibold">Border less Temper</span>
                     </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Name Case</div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Border less Temper</div>
+                </a>
+                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
+                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl font-semibold">Clear Sheet</span>
+                    </div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Clear Sheet</div>
+                </a>
+                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
+                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl font-semibold">Mate Sheet</span>
+                    </div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Mate Sheet</div>
+                </a>
+                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
+                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl font-semibold">Bullet Proof Temper</span>
+                    </div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Bullet Proof Temper</div>
+                </a>
+                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
+                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl font-semibold">Mirror Temper</span>
+                    </div>
+                    <div class="bg-black text-white text-center font-bold uppercase py-3">Mirror Temper</div>
                 </a>
             </div>
         </div>
     </section>
-    <footer class="bg-[var(--brand-footer)] text-white mt-10">
-        <div class="container mx-auto px-4 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="text-lg font-semibold mb-3">BlackRoar</h4>
-                    <p class="text-gray-400">Premium cases and accessories for your devices.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-3">Support</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="link-hover">Shipping & Returns</a></li>
-                        <li><a href="#" class="link-hover">Privacy Policy</a></li>
-                        <li><a href="#" class="link-hover">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-3">Contact</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>support@casekaaran.com</li>
-                        <li>+91 90000 00000</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 text-center text-gray-500 text-sm">© <span id="year"></span> BlackRoar. All rights reserved.</div>
-        </div>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
@@ -159,5 +142,4 @@
         }
     </script>
 </body>
-</html>
 </html>
