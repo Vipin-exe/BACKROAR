@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login — BackRoar</title>
+    <title>More — BackRoar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
@@ -34,14 +34,14 @@
         .link-hover:hover { color: var(--brand-primary); }
         .link-accent { color: var(--brand-primary); }
         .link-accent:hover { color: var(--brand-primary-hover); }
-
+        
     </style>
 </head>
 <body class="bg-black">
     <nav class="fixed w-full z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <a href="index.html#home" class="flex items-center gap-2">
-                <img src="image.png" alt="BlackRoar" class="w-50 h-10 square" />
+                <img src="image.png" alt="BackRoar" class="w-50 h-10 square" />
             </a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="index.html#shop" class="text-[var(--brand-text)] link-hover">Shop</a>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-[var(--brand-text)] hover:bg-black/5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
@@ -74,42 +74,24 @@
             <div class="px-4 py-3 space-y-3">
                 <a href="index.html#shop" class="block text-[var(--brand-text)]">Shop</a>
                 <a href="index.html#collections" class="block text-[var(--brand-text)]">Collections</a>
-                <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
                 <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
                 <a href="login.html" class="block text-[var(--brand-text)]">Login</a>
+                <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
             </div>
         </div>
     </nav>
 
-    <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none"></canvas>
-    <main class="relative z-10 min-h-screen flex items-center justify-center pt-24 px-4">
-        <div class="w-full max-w-sm rounded-xl p-[1px] bg-gradient-to-r from-[var(--brand-heading)] to-[var(--brand-primary)] shadow">
-            <div class="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-[0.75rem] p-6">
-            <h1 class="text-2xl font-semibold text-gradient text-center">Login</h1>
-            <p class="text-sm text-gray-600 text-center mt-1">Welcome back to BackRoar</p>
-            <form class="mt-6 space-y-4">
-                <div>
-                    <label for="email" class="block text-sm font-medium">Email</label>
-                    <input id="email" type="email" required class="mt-1 w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" placeholder="Enter your email" />
-                </div>
-                <div>
-                    <label for="password" class="block text-sm font-medium">Password</label>
-                    <input id="password" type="password" required class="mt-1 w-full px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" placeholder="••••••••" />
-                </div>
-                <div class="flex items-center justify-between">
-                    <label class="inline-flex items-center gap-2 text-sm">
-                        <input type="checkbox" class="rounded border-[var(--card-border)]" />
-                        Remember me
-                    </label>
-                    <a href="#" class="text-sm link-accent">Forgot password?</a>
-                </div>
-                <button type="submit" class="w-full btn-accent px-4 py-2 rounded-lg font-medium">Sign In</button>
-            </form>
-            <div class="text-center mt-4 text-sm">
-                <span class="text-gray-600">New to BackRoar?</span>
-                <a href="#" class="ml-1 link-accent font-medium">Create an account</a>
-            </div>
-            </div>
+
+    <main class="min-h-screen flex items-center justify-center py-24 px-4">
+        <div class="w-full max-w-md bg-[var(--card-bg)] border border-[var(--card-border)] rounded-lg shadow-lg p-8">
+            <h1 class="text-3xl font-bold text-[var(--brand-heading)] text-center mb-6">More Information</h1>
+            <ul class="space-y-4">
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">FAQs</a></li>
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Blog</a></li>
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Partnerships</a></li>
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Careers</a></li>
+                <li><a href="index.html#contact" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Contact Us</a></li>
+            </ul>
         </div>
     </main>
 
@@ -124,63 +106,7 @@
                 a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
         }
-        const canvas = document.getElementById('bgCanvas');
-        if (canvas) {
-            const dpr = window.devicePixelRatio || 1;
-            const ctx = canvas.getContext('2d');
-            function resize() { canvas.width = window.innerWidth * dpr; canvas.height = window.innerHeight * dpr; }
-            resize();
-            window.addEventListener('resize', resize);
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-            const count = isMobile ? 60 : 120;
-            const styles = getComputedStyle(document.documentElement);
-            const primary = (styles.getPropertyValue('--brand-primary') || '#88898A').trim();
-            const accent = (styles.getPropertyValue('--brand-accent') || '#0066FF').trim();
-            const r = (min, max) => Math.random() * (max - min) + min;
-            const particles = new Array(count).fill(0).map(() => ({
-                x: r(0, canvas.width),
-                y: r(0, canvas.height),
-                vx: r(-0.35, 0.35) * dpr,
-                vy: r(-0.35, 0.35) * dpr,
-                size: r(1.2, 2.2) * dpr,
-                color: Math.random() < 0.6 ? accent : primary
-            }));
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (let i = 0; i < particles.length; i++) {
-                    const p = particles[i];
-                    p.x += p.vx; p.y += p.vy;
-                    if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
-                    if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                    ctx.fillStyle = p.color;
-                    ctx.globalAlpha = 0.85;
-                    ctx.fill();
-                }
-                const threshold = isMobile ? 100 * dpr : 140 * dpr;
-                ctx.globalAlpha = 0.09;
-                ctx.strokeStyle = accent;
-                ctx.lineWidth = 0.8 * dpr;
-                for (let i = 0; i < particles.length; i++) {
-                    const a = particles[i];
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const b = particles[j];
-                        const dx = a.x - b.x, dy = a.y - b.y;
-                        const dist = Math.hypot(dx, dy);
-                        if (dist < threshold) {
-                            ctx.beginPath();
-                            ctx.moveTo(a.x, a.y);
-                            ctx.lineTo(b.x, b.y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-                ctx.globalAlpha = 1;
-                requestAnimationFrame(draw);
-            }
-            requestAnimationFrame(draw);
-        }
+
     </script>
 <footer class="bg-black text-white py-12">
             <div class="container mx-auto px-4">
@@ -216,7 +142,7 @@
                         <h5 class="font-semibold mb-2">Connect with us</h5>
                         <div class="flex space-x-4">
                             <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.363 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.715.056 8.825.38 9.467 7.594 9.513 7.687.05.173.05.376.05.592 0 2.43-.013 2.784-.056 3.715-.38 8.825-7.594 9.467-7.687 9.513-.173.05-.376.05-.592.05-2.43 0-2.784-.013-3.715-.056-8.825-.38-9.467-7.594-9.513-7.687-.05-.173-.05-.376-.05-.592 0-2.43.013-2.784.056-3.715.38-8.825 7.594-9.467 7.687-9.513.173-.05.376-.05.592-.05zM12 1.802c-2.686 0-3.038.014-4.122.067-7.21.325-7.698 8.048-7.75 8.179-.04.1-.04.247-.04.423 0 2.686.014 3.038.067 4.122.325 7.21 8.048 7.698 8.179 7.75.1.04.247.04.423.04 2.686 0 3.038-.014 4.122-.067 7.21-.325 7.698-8.048 7.75-8.179.04-.1.04-.247.04-.423 0-2.686-.014-3.038-.067-4.122-.325-7.21-8.048-7.698-8.179-7.75-.1-.04-.247-.04-.423-.04zm0 1.883c2.15 0 2.414.009 3.26.051 6.5.31 6.839 7.167 6.886 7.283.035.088.035.216.035.386 0 2.15-.009 2.414-.051 3.26-.31 6.5-7.167 6.839-7.283 6.886-.088.035-.216.035-.386.035-2.15 0-2.414-.009-3.26-.051-6.5-.31-6.839-7.167-6.886-7.283-.035-.088-.035-.216-.035-.386 0-2.15.009-2.414.051-3.26.31-6.5 7.167-6.839 7.283-6.886.088-.035.216-.035.386-.035zm0 3.627c-2.275 0-4.111 1.835-4.111 4.11s1.836 4.11 4.111 4.11 4.111-1.835 4.111-4.11-1.836-4.11-4.111-4.11zm0 6.775c-1.472 0-2.665-1.193-2.665-2.665S10.528 9.802 12 9.802s2.665 1.193 2.665 2.665-1.193 2.665-2.665 2.665z" clip-rule="evenodd" /></svg></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.715.056 8.825.38 9.467 7.594 9.513 7.687.05.173.05.376.05.592 0 2.43-.013 2.784-.056 3.715-.38 8.825-7.594 9.467-7.687 9.513-.173.05-.376.05-.592.05-2.43 0-2.784-.013-3.715-.056-8.825-.38-9.467-7.594-9.513-7.687-.05-.173-.05-.376-.05-.592 0-2.43.013-2.784.056-3.715.38-8.825 7.594-9.467 7.687-9.513.173-.05.376-.05.592-.05zM12 1.802c-2.686 0-3.038.014-4.122.067-7.21.325-7.698 8.048-7.75 8.179-.04.1-.04.247-.04.423 0 2.686.014 3.038.067 4.122.325 7.21 8.048 7.698 8.179 7.75.1.04.247.04.423.04 2.686 0 3.038-.014 4.122-.067 7.21-.325 7.698-8.048 7.75-8.179.04-.1.04-.247.04-.423 0-2.686-.014-3.038-.067-4.122-.325-7.21-8.048-7.698-8.179-7.75-.1-.04-.247-.04-.423-.04zm0 1.883c2.15 0 2.414.009 3.26.051 6.5.31 6.839 7.167 6.886 7.283.035.088.035.216.035.386 0 2.15-.009 2.414-.051 3.26-.31 6.5-7.167 6.839-7.283 6.886-.088.035-.216-.035-.386.035-2.15 0-2.414-.009-3.26-.051-6.5-.31-6.839-7.167-6.886-7.283-.035-.088-.035-.216-.035-.386 0-2.15.009-2.414.051-3.26.31-6.5 7.167-6.839 7.283-6.886.088-.035.216-.035.386-.035zm0 3.627c-2.275 0-4.111 1.835-4.111 4.11s1.836 4.11 4.111 4.11 4.111-1.835 4.111-4.11-1.836-4.11-4.111-4.11zm0 6.775c-1.472 0-2.665-1.193-2.665-2.665S10.528 9.802 12 9.802s2.665 1.193 2.665 2.665-1.193 2.665-2.665 2.665z" clip-rule="evenodd" /></svg></a>
                         </div>
                     </div>
                     <div>

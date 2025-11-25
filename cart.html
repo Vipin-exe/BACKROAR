@@ -36,7 +36,21 @@
                 <button id="menuToggle" aria-label="Menu" class="md:hidden p-2 rounded-lg text-[var(--brand-text)] hover:bg-black/5">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
-                <a href="login.html" class="hidden md:inline-block px-3 py-2 rounded-lg btn-accent text-white text-sm">Login</a>
+                <div class="relative group">
+                    <button class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3" stroke-width="2"/><path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>Login</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+                        <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Login</a>
+                        <a href="account.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Orders</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Wishlist</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rewards</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Gift Cards</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
@@ -45,6 +59,8 @@
                 <a href="index.html#collections" class="block text-[var(--brand-text)]">Collections</a>
                 <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
                 <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
+                <a href="account.html" class="block text-[var(--brand-text)]">Account</a>
+                <a href="more.html" class="block text-[var(--brand-text)]">More</a>
                 <a href="login.html" class="block text-[var(--brand-text)]">Login</a>
             </div>
         </div>
@@ -132,5 +148,59 @@
         }
         render();
     </script>
+<footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">USEFUL LINKS</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Love from the Customers</a></li>
+                        <li><a href="#about" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Shipping policy</a></li>
+                        <li><a href="#" class="hover:text-white">Term and Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ACCOUNT</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">My Orders</a></li>
+                        <li><a href="#" class="hover:text-white">My Account</a></li>
+                        <li><a href="#" class="hover:text-white">Track order</a></li>
+                        <li><a href="#" class="hover:text-white">Checkout</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">HELP CENTER</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
+                    <p class="text-gray-400 mb-2">Support time : 09.30 AM to 06.00 PM (Monday to saturday)</p>
+                    <p class="text-gray-400 mb-4">Contact@backroar.in</p>
+                    <h5 class="font-semibold mb-2">Connect with us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.363 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.715.056 8.825.38 9.467 7.594 9.513 7.687.05.173.05.376.05.592 0 2.43-.013 2.784-.056 3.715-.38 8.825-7.594 9.467-7.687 9.513-.173.05-.376.05-.592.05-2.43 0-2.784-.013-3.715-.056-8.825-.38-9.467-7.594-9.513-7.687-.05-.173-.05-.376-.05-.592 0-2.43.013-2.784.056-3.715.38-8.825 7.594-9.467 7.687-9.513.173-.05.376-.05.592-.05zM12 1.802c-2.686 0-3.038.014-4.122.067-7.21.325-7.698 8.048-7.75 8.179-.04.1-.04.247-.04.423 0 2.686.014 3.038.067 4.122.325 7.21 8.048 7.698 8.179 7.75.1.04.247.04.423.04 2.686 0 3.038-.014 4.122-.067 7.21-.325 7.698-8.048 7.75-8.179.04-.1.04-.247.04-.423 0-2.686-.014-3.038-.067-4.122-.325-7.21-8.048-7.698-8.179-7.75-.1-.04-.247-.04-.423-.04zm0 1.883c2.15 0 2.414.009 3.26.051 6.5.31 6.839 7.167 6.886 7.283.035.088.035.216.035.386 0 2.15-.009 2.414-.051 3.26-.31 6.5-7.167 6.839-7.283 6.886-.088.035-.216-.035-.386-.035-2.15 0-2.414-.009-3.26-.051-6.5-.31-6.839-7.167-6.886-7.283-.035-.088-.035-.216-.035-.386 0-2.15.009-2.414.051-3.26.31-6.5 7.167-6.839 7.283-6.886.088-.035.216-.035.386-.035zm0 3.627c-2.275 0-4.111 1.835-4.111 4.11s1.836 4.11 4.111 4.11 4.111-1.835 4.111-4.11-1.836-4.11-4.111-4.11zm0 6.775c-1.472 0-2.665-1.193-2.665-2.665S10.528 9.802 12 9.802s2.665 1.193 2.665 2.665-1.193 2.665-2.665 2.665z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">REGISTERED OFFICE ADDRESS:</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
+                    <p class="text-gray-400">Backroar</p>
+                    <p class="text-gray-400">503 Rhythm Plaza</p>
+                    <p class="text-gray-400">Nikol Ringroad</p>
+                    <p class="text-gray-400">Ahmedabad Gujarat - 382350</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+                <p>Copyright 2025 © Backroar.in</p>
+                <div class="flex gap-2 mt-4 md:mt-0">
+                        <img src="final_payments_icon-1.png-final.png" alt="Payment Methods" class="h-6">
+                    </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

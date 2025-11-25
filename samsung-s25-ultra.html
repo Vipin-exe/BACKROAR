@@ -31,6 +31,8 @@
                 <a href="categories.html" class="text-[var(--brand-text)] link-hover">Categories</a>
                 <a href="index.html#about" class="text-[var(--brand-text)] link-hover">About</a>
                 <a href="index.html#contact" class="text-[var(--brand-text)] link-hover">Contact</a>
+                <a href="account.html" class="text-[var(--brand-text)] link-hover">Account</a>
+                <a href="more.html" class="text-[var(--brand-text)] link-hover">More</a>
             </div>
             <div class="flex items-center gap-2">
                 <input type="search" placeholder="Search cases" class="hidden md:block px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
@@ -47,6 +49,8 @@
                 <a href="categories.html" class="block text-[var(--brand-text)]">Categories</a>
                 <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
                 <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
+                <a href="account.html" class="block text-[var(--brand-text)]">Account</a>
+                <a href="more.html" class="block text-[var(--brand-text)]">More</a>
             </div>
         </div>
     </nav>
@@ -63,7 +67,13 @@
                         <img src="S25 ultra AI.jpg" alt="Samsung S25 Ultra 5" class="w-full h-auto object-cover flex-shrink-0" />
                         <img src="S25 ultra eco system.jpg" alt="Samsung S25 Ultra 6" class="w-full h-auto object-cover flex-shrink-0" />
                     </div>
-
+                    <!-- Navigation Arrows -->
+                    <button id="prevImage" class="hidden md:block absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="nextImage" class="hidden md:block absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
             </div>
             <div class="md:w-1/2 flex flex-col justify-center">
@@ -74,20 +84,20 @@
                 </div>
                 <div class="mb-6">
                     <h3 class="text-lg font-semibold mb-2">Colour: Titanium Black</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="border-2 border-[var(--branda_navbar)] p-2 rounded-lg cursor-pointer">
+                    <div id="colorOptions" class="flex flex-wrap gap-3">
+                        <div class="color-option border-2 border-[var(--brand-navbar)] p-2 rounded-lg cursor-pointer" data-color="Titanium Black">
                             <img src="S25 ultra front (black).jpg" alt="Titanium Black" class="w-20 h-20 object-cover rounded" />
                             <p class="text-sm mt-1">₹1,29,999.00</p>
                         </div>
-                        <div class="border border-[var(--card-border)] p-2 rounded-lg cursor-pointer">
+                        <div class="color-option border border-[var(--card-border)] p-2 rounded-lg cursor-pointer" data-color="Titanium White">
                             <img src="S25 ultra front (white silver).jpg" alt="Titanium White" class="w-20 h-20 object-cover rounded" />
                             <p class="text-sm mt-1">₹1,29,999.00</p>
                         </div>
-                        <div class="border border-[var(--card-border)] p-2 rounded-lg cursor-pointer">
+                        <div class="color-option border border-[var(--card-border)] p-2 rounded-lg cursor-pointer" data-color="Titanium Silver">
                             <img src="S25 ultra front (silver blue).jpg" alt="Titanium Silver" class="w-20 h-20 object-cover rounded" />
                             <p class="text-sm mt-1">₹1,29,999.00</p>
                         </div>
-                        <div class="border border-[var(--card-border)] p-2 rounded-lg cursor-pointer">
+                        <div class="color-option border border-[var(--card-border)] p-2 rounded-lg cursor-pointer" data-color="Titanium Grey">
                             <img src="S25 ultra front (grey).jpg" alt="Titanium Grey" class="w-20 h-20 object-cover rounded" />
                             <p class="text-sm mt-1">₹1,29,999.00</p>
                         </div>
@@ -95,11 +105,11 @@
                 </div>
                 <div class="mb-6">
                     <h3 class="text-lg font-semibold mb-2">Size:</h3>
-                    <div class="flex gap-3">
-                        <div class="border-2 border-[var(--branda_navbar)] px-4 py-2 rounded-lg cursor-pointer">
+                    <div id="storageOptions" class="flex gap-3">
+                        <div class="storage-option border-2 border-[var(--brand-navbar)] px-4 py-2 rounded-lg cursor-pointer" data-storage="12GB + 256GB">
                             12GB + 256GB
                         </div>
-                        <div class="border border-[var(--card-border)] px-4 py-2 rounded-lg cursor-pointer">
+                        <div class="storage-option border border-[var(--card-border)] px-4 py-2 rounded-lg cursor-pointer" data-storage="12GB + 512GB">
                             12GB + 512GB
                         </div>
                     </div>
@@ -135,32 +145,59 @@
         </div>
     </main>
 
-    <footer class="bg-[var(--brand-footer)] text-white mt-10">
-        <div class="container mx-auto px-4 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <h4 class="text-lg font-semibold mb-3">BlackRoar</h4>
-                    <p class="text-gray-400">Premium cases and accessories for your devices.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-3">Support</h4>
+                    <h4 class="text-lg font-semibold mb-4">USEFUL LINKS</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="link-hover">Shipping & Returns</a></li>
-                        <li><a href="#" class="link-hover">Privacy Policy</a></li>
-                        <li><a href="#" class="link-hover">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-white">Love from the Customers</a></li>
+                        <li><a href="#about" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Shipping policy</a></li>
+                        <li><a href="#" class="hover:text-white">Term and Conditions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-3">Contact</h4>
+                    <h4 class="text-lg font-semibold mb-4">ACCOUNT</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
                     <ul class="space-y-2 text-gray-400">
-                        <li>support@casekaaran.com</li>
-                        <li>+91 90000 00000</li>
+                        <li><a href="#" class="hover:text-white">My Orders</a></li>
+                        <li><a href="#" class="hover:text-white">My Account</a></li>
+                        <li><a href="#" class="hover:text-white">Track order</a></li>
+                        <li><a href="#" class="hover:text-white">Checkout</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact us</a></li>
                     </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">HELP CENTER</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
+                    <p class="text-gray-400 mb-2">Support time : 09.30 AM to 06.00 PM (Monday to saturday)</p>
+                    <p class="text-gray-400 mb-4">Contact@backroar.in</p>
+                    <h5 class="font-semibold mb-2">Connect with us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.363 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.715.056 8.825.38 9.467 7.594 9.513 7.687.05.173.05.376.05.592 0 2.43-.013 2.784-.056 3.715-.38 8.825-7.594 9.467-7.687 9.513-.173.05-.376.05-.592.05-2.43 0-2.784-.013-3.715-.056-8.825-.38-9.467-7.594-9.513-7.687-.05-.173-.05-.376-.05-.592 0-2.43.013-2.784.056-3.715.38-8.825 7.594-9.467 7.687-9.513.173-.05.376-.05.592-.05zM12 1.802c-2.686 0-3.038.014-4.122.067-7.21.325-7.698 8.048-7.75 8.179-.04.1-.04.247-.04.423 0 2.686.014 3.038.067 4.122.325 7.21 8.048 7.698 8.179 7.75.1.04.247.04.423.04 2.686 0 3.038-.014 4.122-.067 7.21-.325 7.698-8.048 7.75-8.179.04-.1.04-.247.04-.423 0-2.686-.014-3.038-.067-4.122-.325-7.21-8.048-7.698-8.179-7.75-.1-.04-.247-.04-.423-.04zm0 1.883c2.15 0 2.414.009 3.26.051 6.5.31 6.839 7.167 6.886 7.283.035.088.035.216.035.386 0 2.15-.009 2.414-.051 3.26-.31 6.5-7.167 6.839-7.283 6.886-.088.035-.216.035-.386.035-2.15 0-2.414-.009-3.26-.051-6.5-.31-6.839-7.167-6.886-7.283-.035-.088-.035-.216-.035-.386 0-2.15.009-2.414.051-3.26.31-6.5 7.167-6.839 7.283-6.886.088-.035.216-.035.386-.035zm0 3.627c-2.275 0-4.111 1.835-4.111 4.11s1.836 4.11 4.111 4.11 4.111-1.835 4.111-4.11-1.836-4.11-4.111-4.11zm0 6.775c-1.472 0-2.665-1.193-2.665-2.665S10.528 9.802 12 9.802s2.665 1.193 2.665 2.665-1.193 2.665-2.665 2.665z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">REGISTERED OFFICE ADDRESS:</h4>
+                    <div class="w-12 h-1 bg-green-500 mb-4"></div>
+                    <p class="text-gray-400">Backroar</p>
+                    <p class="text-gray-400">503 Rhythm Plaza</p>
+                    <p class="text-gray-400">Nikol Ringroad</p>
+                    <p class="text-gray-400">Ahmedabad Gujarat - 382350</p>
                 </div>
             </div>
-            <div class="mt-8 text-center text-gray-500 text-sm">© <span id="year"></span> BlackRoar. All rights reserved.</div>
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+                <p>Copyright 2025 © Backroar.in</p>
+                <div class="flex gap-2 mt-4 md:mt-0">
+                        <img src="final_payments_icon-1.png-final.png" alt="Payment Methods" class="h-6">
+                    </div>
+            </div>
         </div>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
 
     <script>
@@ -182,19 +219,56 @@
         function saveCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
         function addToCart(item){ const c=getCart(); const i=c.findIndex(x=>x.id===item.id); if(i>-1){ c[i].qty+=1; } else { c.push(item); } saveCart(c); }
 
+        // Variant selection logic
+        let selectedColor = null;
+        let selectedStorage = null;
+
+        const colorOptions = document.querySelectorAll('.color-option');
+        const storageOptions = document.querySelectorAll('.storage-option');
+
+        function selectOption(options, selectedValue, dataAttribute, className) {
+            options.forEach(option => {
+                option.classList.remove('border-2', 'border-[var(--brand-navbar)]');
+                option.classList.add('border', 'border-[var(--card-border)]');
+            });
+            selectedValue.classList.remove('border', 'border-[var(--card-border)]');
+            selectedValue.classList.add('border-2', 'border-[var(--brand-navbar)]');
+            return selectedValue.dataset[dataAttribute];
+        }
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                selectedColor = selectOption(colorOptions, option, 'color', 'color-option');
+                console.log('Selected Color:', selectedColor);
+            });
+        });
+
+        storageOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                selectedStorage = selectOption(storageOptions, option, 'storage', 'storage-option');
+                console.log('Selected Storage:', selectedStorage);
+            });
+        });
+
         // Add to Cart button logic
         const addToCartBtn = document.getElementById('addToCartBtn');
         if (addToCartBtn) {
             addToCartBtn.addEventListener('click', () => {
+                if (!selectedColor || !selectedStorage) {
+                    alert('Please select both a color and storage option.');
+                    return;
+                }
                 const product = {
                     id: 'samsung-s25-ultra',
                     name: 'Samsung S25 Ultra',
                     price: 1199.99,
                     image: 'samsung-s25-ultra.jpg',
-                    qty: 1
+                    qty: 1,
+                    color: selectedColor,
+                    storage: selectedStorage
                 };
                 addToCart(product);
-                alert('Samsung S25 Ultra added to cart!');
+                alert(`Samsung S25 Ultra (${selectedColor}, ${selectedStorage}) added to cart!`);
             });
         }
         // Slider functionality
@@ -232,6 +306,22 @@
         }
 
         showImage(currentIndex); // Initialize slider
+
+        // Navigation arrow functionality
+        const prevImageBtn = document.getElementById('prevImage');
+        const nextImageBtn = document.getElementById('nextImage');
+
+        if (prevImageBtn && nextImageBtn) {
+            prevImageBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            nextImageBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+        }
     </script>
 </body>
 </html>

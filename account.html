@@ -3,19 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Phones — BlackRoar</title>
+    <title>Account — BackRoar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
-        :root { --brand-bg:#F5F5F5; --brand-navbar:#1A1A1A; --brand-footer:#1A1A1A; --brand-heading:#88898A; --brand-text:#1A1A1A; --brand-primary:#88898A; --brand-primary-hover:#C4C4C4; --card-bg:#FFFFFF; --card-border:#C4C4C4; }
-        body { font-family:'Poppins',sans-serif; color:var(--brand-text); }
-        .hover-scale { transition: transform .25s ease; }
+        :root {
+            --brand-bg: #F5F5F5;
+            --brand-navbar: #1A1A1A;
+            --brand-footer: #1A1A1A;
+            --brand-heading: #88898A;
+            --brand-text: #1A1A1A;
+            --brand-primary: #88898A;
+            --brand-primary-hover: #C4C4C4;
+            --brand-accent: #0066FF;
+            --card-bg: #FFFFFF;
+            --card-bg-alt: #F5F5F5;
+            --card-border: #C4C4C4;
+            --brand-light: #F5F5F5;
+        }
+        body { font-family: 'Poppins', sans-serif; color: var(--brand-text); }
+        .gradient-bg { background: linear-gradient(135deg, var(--brand-navbar) 0%, #1a1a1a 100%); }
+        .text-gradient { background: linear-gradient(90deg, var(--brand-heading) 0%, var(--brand-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-scale { transition: transform 0.25s ease; }
         .hover-scale:hover { transform: translateY(-2px) scale(1.02); }
+        .badge { display: inline-block; padding: 0.25rem 0.6rem; font-size: 0.75rem; border-radius: 999px; background: var(--brand-primary); color: #fff; }
+        .btn-primary { background: var(--brand-primary); color: #fff; }
+        .btn-primary:hover { background: var(--brand-primary-hover); }
+        .btn-accent { background: var(--brand-accent); color: #fff; }
+        .btn-accent:hover { background: #3388ff; }
         .link-hover:hover { color: var(--brand-primary); }
+        .link-accent { color: var(--brand-primary); }
+        .link-accent:hover { color: var(--brand-primary-hover); }
     </style>
-    <link rel="icon" href="image.png" />
 </head>
 <body class="bg-[var(--brand-bg)]">
+    <!-- Navbar -->
     <nav class="sticky top-0 w-full z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -32,10 +54,14 @@
                 <a href="index.html#about" class="text-[var(--brand-text)] link-hover">About</a>
                 <a href="index.html#contact" class="text-[var(--brand-text)] link-hover">Contact</a>
 
+                <a href="more.html" class="text-[var(--brand-text)] link-hover">More</a>
             </div>
             <div class="flex items-center gap-2">
                 <input type="search" placeholder="Search cases" class="hidden md:block px-3 py-2 rounded-lg border border-[var(--card-border)] focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)] outline-none" />
-                <a href="cart.html" aria-label="Cart" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg><span>Cart</span></a>
+                <a href="cart.html" aria-label="Cart" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+                    <span>Cart</span>
+                </a>
                 <div class="relative group">
                     <button class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--brand-navbar)] hover:bg-black text-white text-sm">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3" stroke-width="2"/><path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -51,8 +77,13 @@
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Gift Cards</a>
                     </div>
                 </div>
-                <a href="cart.html" aria-label="Cart" class="md:hidden p-2 rounded-lg bg-[var(--brand-navbar)] text-white hover:bg-black"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg></a>
-                <a href="login.html" aria-label="Account" class="md:hidden p-2 rounded-lg bg-[var(--brand-navbar)] text-white hover:bg-black"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3" stroke-width="2"/><path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                
+                <a href="cart.html" aria-label="Cart" class="md:hidden p-2 rounded-lg bg-[var(--brand-navbar)] text-white hover:bg-black">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6h14l-2 8H8L6 6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+                </a>
+                <a href="login.html" aria-label="Account" class="md:hidden p-2 rounded-lg bg-[var(--brand-navbar)] text-white hover:bg-black">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3" stroke-width="2"/><path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
         </div>
         <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
@@ -62,79 +93,26 @@
                 <a href="categories.html" class="block text-[var(--brand-text)]">Categories</a>
                 <a href="index.html#about" class="block text-[var(--brand-text)]">About</a>
                 <a href="index.html#contact" class="block text-[var(--brand-text)]">Contact</a>
-                <a href="login.html" class="block text-[var(--brand-text)]">Login</a>
 
+                <a href="more.html" class="block text-[var(--brand-text)]">More</a>
+                <a href="login.html" class="block text-[var(--brand-text)]">Login</a>
             </div>
         </div>
     </nav>
 
-    <section class="py-10">
-        <div class="container mx-auto px-4">
-            <h1 class="text-2xl md:text-4xl font-bold text-center mb-8 text-[var(--brand-heading)] uppercase">Mobile Phones</h1>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">iPhone</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">iPhone</div>
-                </a>
-                <a href="samsung-s25-ultra.html" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-        <span class="text-lg md:text-xl font-semibold">Samsung</span>
-    </div>
-    <div class="bg-black text-white text-center font-bold uppercase py-3">Samsung</div>
-</a>
-<a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-        <span class="text-lg md:text-xl font-semibold">Vivo</span>
-    </div>
-    <div class="bg-black text-white text-center font-bold uppercase py-3">Vivo</div>
-</a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">Oppo</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Oppo</div>
-                </a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">Redmi</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Redmi</div>
-                </a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">One Plus</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">One Plus</div>
-                </a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">Moto</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Moto</div>
-                </a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">Realme</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Realme</div>
-                </a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">Lava</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Lava</div>
-                </a>
-                <a href="#" class="block overflow-hidden bg-white border border-[var(--card-border)] shadow hover-scale">
-                    <div class="aspect-square bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl font-semibold">Infinix</span>
-                    </div>
-                    <div class="bg-black text-white text-center font-bold uppercase py-3">Infinix</div>
-                </a>
-            </div>
+    <main class="min-h-screen flex items-center justify-center py-24 px-4">
+        <div class="w-full max-w-md bg-[var(--card-bg)] border border-[var(--card-border)] rounded-lg shadow-lg p-8">
+            <h1 class="text-3xl font-bold text-[var(--brand-heading)] text-center mb-6">My Account</h1>
+            <ul class="space-y-4">
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">My Orders</a></li>
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">My Account</a></li>
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Track order</a></li>
+                <li><a href="#" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Checkout</a></li>
+                <li><a href="index.html#contact" class="block text-lg text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors duration-200">Contact us</a></li>
+            </ul>
         </div>
-    </section>
+    </main>
+
     <footer class="bg-black text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -169,7 +147,7 @@
                     <h5 class="font-semibold mb-2">Connect with us</h5>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.363 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.715.056 8.825.38 9.467 7.594 9.513 7.687.05.173.05.376.05.592 0 2.43-.013 2.784-.056 3.715-.38 8.825-7.594 9.467-7.687 9.513-.173.05-.376.05-.592.05-2.43 0-2.784-.013-3.715-.056-8.825-.38-9.467-7.594-9.513-7.687-.05-.173-.05-.376-.05-.592 0-2.43.013-2.784.056-3.715.38-8.825 7.594-9.467 7.687-9.513.173-.05.376-.05.592-.05zM12 1.802c-2.686 0-3.038.014-4.122.067-7.21.325-7.698 8.048-7.75 8.179-.04.1-.04.247-.04.423 0 2.686.014 3.038.067 4.122.325 7.21 8.048 7.698 8.179 7.75.1.04.247.04.423.04 2.686 0 3.038-.014 4.122-.067 7.21-.325 7.698-8.048 7.75-8.179.04-.1.04-.247.04-.423 0-2.686-.014-3.038-.067-4.122-.325-7.21-8.048-7.698-8.179-7.75-.1-.04-.247-.04-.423-.04zm0 1.883c2.15 0 2.414.009 3.26.051 6.5.31 6.839 7.167 6.886 7.283.035.088.035.216.035.386 0 2.15-.009 2.414-.051 3.26-.31 6.5-7.167 6.839-7.283 6.886-.088.035-.216.035-.386.035-2.15 0-2.414-.009-3.26-.051-6.5-.31-6.839-7.167-6.886-7.283-.035-.088-.035-.216-.035-.386 0-2.15.009-2.414.051-3.26.31-6.5 7.167-6.839 7.283-6.886.088-.035.216-.035.386-.035zm0 3.627c-2.275 0-4.111 1.835-4.111 4.11s1.836 4.11 4.111 4.11 4.111-1.835 4.111-4.11-1.836-4.11-4.111-4.11zm0 6.775c-1.472 0-2.665-1.193-2.665-2.665S10.528 9.802 12 9.802s2.665 1.193 2.665 2.665-1.193 2.665-2.665 2.665z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.715.056 8.825.38 9.467 7.594 9.513 7.687.05.173.05.376.05.592 0 2.43-.013 2.784-.056 3.715-.38 8.825-7.594 9.467-7.687 9.513-.173.05-.376.05-.592.05-2.43 0-2.784-.013-3.715-.056-8.825-.38-9.467-7.594-9.513-7.687-.05-.173-.05-.376-.05-.592 0-2.43.013-2.784.056-3.715.38-8.825 7.594-9.467 7.687-9.513.173-.05.376-.05.592-.05zM12 1.802c-2.686 0-3.038.014-4.122.067-7.21.325-7.698 8.048-7.75 8.179-.04.1-.04.247-.04.423 0 2.686.014 3.038.067 4.122.325 7.21 8.048 7.698 8.179 7.75.1.04.247.04.423.04 2.686 0 3.038-.014 4.122-.067 7.21-.325 7.698-8.048 7.75-8.179.04-.1.04-.247.04-.423 0-2.686-.014-3.038-.067-4.122-.325-7.21-8.048-7.698-8.179-7.75-.1-.04-.247-.04-.423-.04zm0 1.883c2.15 0 2.414.009 3.26.051 6.5.31 6.839 7.167 6.886 7.283.035.088.035.216.035.386 0 2.15-.009 2.414-.051 3.26-.31 6.5-7.167 6.839-7.283 6.886-.088.035-.216-.035-.386.035-2.15 0-2.414-.009-3.26-.051-6.5-.31-6.839-7.167-6.886-7.283-.035-.088-.035-.216-.035-.386 0-2.15.009-2.414.051-3.26.31-6.5 7.167-6.839 7.283-6.886.088-.035.216-.035.386-.035zm0 3.627c-2.275 0-4.111 1.835-4.111 4.11s1.836 4.11 4.111 4.11 4.111-1.835 4.111-4.11-1.836-4.11-4.111-4.11zm0 6.775c-1.472 0-2.665-1.193-2.665-2.665S10.528 9.802 12 9.802s2.665 1.193 2.665 2.665-1.193 2.665-2.665 2.665z" clip-rule="evenodd" /></svg></a>
                     </div>
                 </div>
                 <div>
